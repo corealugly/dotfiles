@@ -1,0 +1,212 @@
+! {{{ Redefine default colorscheme
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+!#define S_base00         #9FB7BF
+!#define S_base00        #E4E6E5
+!#define S_base00        #AFE0C1
+!#define S_base00        #9DEBB9
+!#define S_base00        #A7F7C4
+!#define S_base00        #D9FFE7
+!#define S_base00        #F4FFF8
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+!#define S_green         #859900
+#define S_green         #25B922
+
+!#DARK
+! цвет фона
+*background:            S_base03
+! цвет переднего плана
+*foreground:            S_base00
+!!(1) black dark/light
+*color0:               S_base02
+*color8:               S_base03
+!*color0:                #002731
+!*color8:                #001E26
+
+!!(2) red dark/light
+*color1:               S_red
+*color9:               S_orange
+!*color1:                #D01B24
+!*color9:                #BD3612
+
+!!(3) green dark/light
+*color2:                S_green
+*color10:               S_base01
+!*color2:                 #728905
+!*color10:                #465A61
+
+!!(4) yellow dark/light
+!*color3:                S_green  
+*color3:                S_yellow
+*color11:               S_base00
+!*color3:                #A57705
+!*color11:               #52676F
+
+!!(5) blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+!*color4:                #2075C7 
+!*color12:               #708183
+
+!!(6) magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+!*color5:                #C61B6E
+!*color13:               #5856B9
+
+!!(7) cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+!*color6:                #259185 
+!*color14:               #81908F 
+
+!!(8) white dark/light
+*color7:                S_base2
+*color15:               S_base3
+!*color7:                #E9E2CB 
+!*color15:               #FCF4DC
+
+!  }}}
+! {{{ inactive windows
+! процент "гашения" цвета текста в неактивном окне
+URxvt.fading: 0
+
+! Цвет "гашения" текста
+URxvt.fadeColor: #666666
+
+! цвет не активного окна
+*fadeColor:             S_base02
+*cursorColor:           S_base01
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base01
+! }}}
+! {{{ прозрачность
+! Уменьшение (-100 .. -1) или увеличение (0 .. 100) яркости прозрачного фона
+URxvt.shading: 70
+! прозрачность 
+URxvt.transparent: true
+! Цвет окрашивания прозрачного фона
+!!!!URxvt.tintColor: #354040
+! }}}
+! {{{ scrollbar
+URxvt.scrollBar: false
+! стиль скроллбара 
+URxvt.scrollstyle: rxvt
+! цвет скроллера
+URxvt.scrollColor: #1A1A1A
+! цвет основной части скролл-бара
+URxvt.troughColor: #1A1A1A
+! прокрутка при выводе текста
+URxvt*scrollTtyOutput: False
+! прокрутка по нажатию клавиши
+URxvt*scrollTtyKeypress: True
+URxvt*scrollWithBuffer: True
+URxvt*secondaryScroll: True
+! расположение скроллбара
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: true
+! }}}
+! {{{ Use font
+! Шрифты. Для выбора шрифтов используйте утилиту xfontsel
+!URxvt.font: xft:Andale Mon:pixelsize=16
+!URxvt.font: xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book
+!URxvt.font: xft:DejaVu Sans Mono:pixelsize=16:antialias=true
+!URxvt.font: xft:Consolas:pixelsize=16:antialias=true
+URxvt.font:           xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book 
+URxvt.boldFont:       xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book
+URxvt.italicFont:     xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book
+URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book
+Xft.dpi:                    100
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+! иконка для иксов
+URxvt*iconFile: /usr/share/pixmaps/urxvt_32x32.xpm
+! расстояние между строками
+URxvt.lineSpace: 0
+! между символами
+URxvt.letterSpace: -1
+
+*antialias:  true
+*autohint:   true
+! }}}
+! {{{ Extentions
+! включить расширения на perl: основные, парсер регулярных выражений(для подсветки URL)
+!!urxvt будет искать скрипты сначала в этой директории, потом в /usr/lib/urxvt/perl
+!!URxvt.perl-lib: /home/brainsburn/.config/urxvt/perl
+URxvt.perl-lib: /usr/lib/urxvt/perl/
+!URxvt.perl-ext-common: default,matcher,clipboard-osc,tabbed
+URxvt.perl-ext-common: default,matcher,clipboard
+
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
+!If true, PRIMARY overwrites clipboard
+URxvt.clipboard.autocopy: true 
+
+!URxvt.clipboard.copycmd:  xsel -ib
+!URxvt.clipboard.pastecmd: xsel -ob
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
+
+! TABBED - options
+URxvt.tabbed.new-button: no
+URxvt.tabbed.tabbar-fg:  2
+URxvt.tabbed.tabbar-bg: -1
+URxvt.tabbed.tab-fg: 7
+URxvt.tabbed.tab-bg: -1
+
+!#----------------
+!Shift+Down  Новая вкладка
+!Shift+Left  Перейти к левой вкладке
+!Shift+Right Перейти к правой вкладке
+!Ctrl+Left   Переместить вкладку влево
+!Ctrl+Right  Переместить вкладку вправо
+!Ctrl+d  Закрыть вкладку
+
+! MATCHER - options
+URxvt.matcher.button:   1
+! регексп для ссылок:
+URxvt.matcher.pattern.0:  (?:https?:\\/\\/|ftp:\\/\\/|news:\\/\\/|mailto:|file:\\/\\/|\\bwww\\.)\n\
+····┆···┆···┆···┆···┆···┆···[a-zA-Z0-9\\x{0410}-\\x{044F}\\-\\@;\\/?:&=%\\$_.+!*\\x27,~#]*\n\
+····┆···┆···┆···┆···┆···┆··(\n\
+····┆···┆···┆···┆···┆···┆···┆\\([a-zA-Z0-9\\x{0410}-\\x{044F}\\-\\@;\\/?:&=%\\$_.+!*\\x27,~#]*\\)| # Allow a pair of matched parentheses\n\
+····┆···┆···┆···┆···┆···┆···┆[a-zA-Z0-9\\x{0410}-\\x{044F}\\-\\@;\\/?:&=%\\$_+*~]  # exclude some trailing characters (heuristic)\n\
+····┆···┆···┆···┆···┆···┆··)+
+! }}}
+! {{{ other
+URxvt.intensityStyles:   false
+! Save 5000 row for scrolling.
+URxvt*saveLines: 5000
+! Мерцание курсора
+URxvt.cursorBlink: false
+! подчёркивать ссылки
+URxvt.underlineURLs: true
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.depth: 32
+! }}}
