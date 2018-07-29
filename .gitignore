@@ -1,2 +1,8 @@
 dotfiles.sublime-project
 dotfiles.sublime-workspace
+.mpd/playlists
+.mpd/mpd.log
+.mpd/mpdstate
+.mpd/mpd.pid
+.mpd/mpd.db
+

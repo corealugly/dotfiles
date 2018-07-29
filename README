@@ -1,0 +1,8 @@
+# Fonts
+# default point ~/.fonts
+alias updateFonts='fc-cache -vf ~/.fonts'
+alias checkFonts='echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"'
+
+# It is required only at start through startx
+# default point ~/.xinitrc
+.xinitrc
