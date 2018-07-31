@@ -5,4 +5,4 @@ dotfiles.sublime-workspace
 .mpd/mpdstate
 .mpd/mpd.pid
 .mpd/mpd.db
-
+.ncmpcpp/error.log

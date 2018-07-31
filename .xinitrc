@@ -10,7 +10,7 @@ xrdb -merge ~/.Xresources &
 ( ( sleep 1 && /usr/bin/urxvtd -q -f -o) & )
 
 # Run guake
-( ( sleep 2 && /usr/bin/guake) & )
+#( ( sleep 2 && /usr/bin/guake) & )
 
 # Compton composite manager
 ( ( sleep 2 && /usr/bin/compton -b) & )
