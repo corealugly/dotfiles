@@ -1,0 +1,4 @@
+#!/bin/bash
+/usr/bin/env scrot /tmp/screenshot.png
+/usr/bin/env convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
+/usr/bin/env i3lock -i /tmp/screenshotblur.png

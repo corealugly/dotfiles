@@ -6,3 +6,4 @@ dotfiles.sublime-workspace
 .mpd/mpd.pid
 .mpd/mpd.db
 .ncmpcpp/error.log
+scripts/monitor-control/

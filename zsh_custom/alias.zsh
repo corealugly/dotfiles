@@ -1,5 +1,5 @@
-alias telegramh="telegram -many -workdir ~/.telegram/home/"
-alias telegramw="telegram -many -workdir ~/.telegram/work/"
+alias telegramh="nohup telegram-desktop -many -workdir ~/.telegram/home/ &"
+alias telegramw="nohup telegram-desktop -many -workdir ~/.telegram/work/ &"
 
 alias DRM="docker run --entrypoint /bin/bash --rm -it"
 alias DR="docker run --entrypoint /bin/bash -it"
