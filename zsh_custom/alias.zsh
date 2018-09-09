@@ -5,4 +5,9 @@ alias DRM="docker run --entrypoint /bin/bash --rm -it"
 alias DR="docker run --entrypoint /bin/bash -it"
 alias CAD="cd /etc/pki/ca/" 
 
-alias XRANDWORK="xrandr --output eDP1 --auto --left-of HDMI1"
+alias gpg-reload="gpg-connect-agent reloadagent /bye"
+
+alias lshl="ls -l \$(find ./ -maxdepth 2 -type l -print)"
+
+alias xrhome="xrandr --output eDP-1 --off --output DP-3-1 --auto --pos 2560x0 --output DP-3-2  --primary --auto --pos 0x0"
+alias xrwork="xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal"
