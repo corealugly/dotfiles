@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+/usr/bin/telegram-desktop -many -workdir ~/.telegram/home/
