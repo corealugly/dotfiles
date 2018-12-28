@@ -126,10 +126,10 @@ URxvt.scrollBar_floating: true
 !URxvt.font: xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book
 !URxvt.font: xft:DejaVu Sans Mono:pixelsize=16:antialias=true
 !URxvt.font: xft:Consolas:pixelsize=16:antialias=true
-URxvt.font:           xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book 
-URxvt.boldFont:       xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book
-URxvt.italicFont:     xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book
-URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=16:antialias=true,style=Book
+URxvt.font:           xft:DejaVu Sans Mono:pixelsize=20:antialias=true,style=Book
+URxvt.boldFont:       xft:DejaVu Sans Mono:pixelsize=20:antialias=true,style=Book
+URxvt.italicFont:     xft:DejaVu Sans Mono:pixelsize=20:antialias=true,style=Book
+URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=20:antialias=true,style=Book
 Xft.dpi:                    100
 Xft.antialias:              true
 Xft.rgba:                   rgb
@@ -149,13 +149,13 @@ URxvt.letterSpace: -1
 ! включить расширения на perl: основные, парсер регулярных выражений(для подсветки URL)
 !!urxvt будет искать скрипты сначала в этой директории, потом в /usr/lib/urxvt/perl
 !!URxvt.perl-lib: /home/brainsburn/.config/urxvt/perl
-URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-lib: /usr/lib64/urxvt/perl/
 !URxvt.perl-ext-common: default,matcher,clipboard-osc,tabbed
-URxvt.perl-ext-common: default,matcher,clipboard
+URxvt.perl-ext-common: default,matcher,clipboard,font-size
 
 URxvt.keysym.M-c:   perl:clipboard:copy
 URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 !If true, PRIMARY overwrites clipboard
 URxvt.clipboard.autocopy: true 
