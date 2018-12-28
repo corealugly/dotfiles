@@ -28,11 +28,14 @@ GetOptions(
 # the kernel
 my $max_brightness = `cat /sys/class/backlight/intel_backlight/max_brightness`;
 my $brightness = `cat /sys/class/backlight/intel_backlight/brightness`;
-my $min_brightness = 10;
-my $step = 0.2;    # 0.1-0.9
+my $min_brightness = 50;
+my $step = 2;  #percentage
 
 sub brighter() {
   # Failsafe
+  my $num_step = $max_brightness/100*$step;
+  $brightness = int($brightness + $num_step);
+  # $brightness = int($brightness * 1.1);
   if ( $brightness > $max_brightness ) {
     $brightness = $max_brightness;
   }  
@@ -40,16 +43,15 @@ sub brighter() {
   elsif ( $brightness < $min_brightness ) {
     $brightness = $min_brightness;
   }
-  else { $brightness = int($brightness * (1.0 + $step)); }
-  # print "inside: $brightness" . "\n";
 }
 
 sub darker() {
+  my $num_step = $max_brightness/100*$step;
+  $brightness = int($brightness - $num_step);
+  # $brightness = int($brightness*0.9);
   if ($brightness < $min_brightness) {
     $brightness = 0;
   } 
-  else { $brightness = int($brightness * (1.0 - $step)); }
-  # print "inside: $brightness" . "\n";
 }
 
 # Note: This needs passwordless sudo privileges
