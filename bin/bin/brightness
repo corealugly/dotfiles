@@ -56,7 +56,8 @@ sub darker() {
 
 # Note: This needs passwordless sudo privileges
 sub set_brightness() {
-  `sudo sh -c "echo '$brightness' > /sys/class/backlight/intel_backlight/brightness"`;
+  #`sudo sh -c "echo '$brightness' > /sys/class/backlight/intel_backlight/brightness"`;
+  `echo '$brightness' > /sys/class/backlight/intel_backlight/brightness`;
   # print "$brightness";
 }
 

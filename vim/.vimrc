@@ -114,17 +114,19 @@ set shiftwidth=4
 set expandtab
 " }}}
 
-
 " {{{ BIND KEYS
 " Работа буфферами
 map <C-q> :bd<CR>        " CTRL+Q - закрыть текущий буффер
-
+map <leader>gf :e <cfile><cr>   " работает как gf, но если файла нет то он будет создан
 
 map <C-L> :set list!<CR>
 "map! <C-L> <C-O>:set list!<CR>
 
 map <F9> :set paste<CR>
 map <F10> :set nopaste<CR>
+
+" limit the width of e-mail text to 72 characters
+au BufRead /tmp/mutt-* set tw=72
 
 "disable replace
 function s:ForbidReplace()

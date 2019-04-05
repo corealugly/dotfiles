@@ -20,10 +20,10 @@ xrdb -merge ~/.Xdefaults &
 
 # Change language for AWESOME
 #( ( sleep 3 && /usr/bin/setxkbmap -layout us,ru -variant -option  grp:alt_shift_toggle, terminate:ctrl_alt_bksp ) & )
-( ( sleep 10 && /usr/bin/kbdd ) & )
-#( ( sleep 10 && dbus-launch /usr/bin/kbdd ) & )
-#dbus-launch /usr/bin/kbdd &
-#( ( sleep 2 && /usr/bin/xxkb ) & )
+#( ( sleep 10 && /usr/bin/kbdd ) & )
+
+# Hide mouse, then not moving
+( ( sleep 5 && /usr/bin/unclutter -root ) & )
 
 # Music Player Daemon
 ( ( sleep 10 && /usr/bin/mpd ) & )
@@ -117,11 +117,11 @@ synclient LeftEdge=1574  \
           MiddleButtonAreaLeft=0 \
           MiddleButtonAreaRight=0 \
           MiddleButtonAreaTop=0 \
-          MiddleButtonAreaBottom=0 \
+          MiddleButtonAreaBottom=0 
 
 #exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome
 #fucking with polkit
-#exec ck-launch-session awesome
+exec ck-launch-session awesome
 #clean down OK !!!!!
-exec awesome
+#exec awesome
 #exec dbus-launch --sh-syntax --exit-with-session awesome

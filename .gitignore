@@ -1,10 +1,10 @@
 dotfiles.sublime-project
 dotfiles.sublime-workspace
-.mpd/playlists
-.mpd/mpd.log
-.mpd/mpdstate
-.mpd/mpd.pid
-.mpd/mpd.db
-.ncmpcpp/error.log
+mpd/.mpd/playlists
+mpd/.mpd/mpd.log
+mpd/.mpd/mpdstate
+mpd/.mpd/mpd.pid
+mpd/.mpd/mpd.db
+ncmpcpp/.ncmpcpp/error.log
 scripts/monitor-control/
-.fonts/.*
+fonts/fonts/.*

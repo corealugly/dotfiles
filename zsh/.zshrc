@@ -96,3 +96,9 @@ source $ZSH/oh-my-zsh.sh
 #    # Avoid executing cdm(1) when X11 has already been started.
 #    [[ -z "$DISPLAY$SSH_TTY$(pgrep xinit)" ]] && exec cdm
 #fi
+
+PATH="/home/corealugly/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/corealugly/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/corealugly/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/corealugly/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/corealugly/perl5"; export PERL_MM_OPT;
