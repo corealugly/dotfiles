@@ -3,6 +3,9 @@
 #xset s noblank &
 #xset s off &
 
+#ENV
+export QT_AUTO_SCREEN_SCALE_FACTOR=0    #fix for keepassxc
+
 #dbus-run
 export  $(dbus-launch)
 
@@ -16,7 +19,7 @@ xrdb -merge ~/.Xdefaults &
 #( ( sleep 2 && /usr/bin/guake) & )
 
 # Compton composite manager
-( ( sleep 2 && /usr/bin/compton -b) & )
+( ( sleep 2 && /usr/bin/compton -b --config ~/.config/awesome/configuration/compton.conf ) & )
 
 # Change language for AWESOME
 #( ( sleep 3 && /usr/bin/setxkbmap -layout us,ru -variant -option  grp:alt_shift_toggle, terminate:ctrl_alt_bksp ) & )
@@ -29,10 +32,9 @@ xrdb -merge ~/.Xdefaults &
 ( ( sleep 10 && /usr/bin/mpd ) & )
 
 # NetworkManager applet
-#( ( sleep 2 && dbus-launch /usr/bin/nm-applet ) & )
 #( ( sleep 2 && /usr/bin/nm-applet ) & )
-#( ( sleep 2 && dbus-launch --sh-syntax --exit-with-session /usr/bin/nm-applet ) & )
-( ( sleep 2 && /usr/bin/nm-applet ) & )
+##( ( sleep 2 && dbus-launch /usr/bin/nm-applet ) & )
+##( ( sleep 2 && dbus-launch --sh-syntax --exit-with-session /usr/bin/nm-applet ) & )
 
 
 # SYNC PRIMARY and CLIPBOARD BUFFER NEW
@@ -45,79 +47,20 @@ xrdb -merge ~/.Xdefaults &
 #autocutsel -fork &
 #autocutsel -selection PRIMARY -fork &
 
+#redshift
+#( ( sleep 5 && redshift-gtk ) & )
+
 # Pulseaudio
-/usr/bin/start-pulseaudio-x11 &
+#/usr/bin/start-pulseaudio-x11 &
+( ( sleep 10 && /usr/bin/pulseaudio --start ) & )
 
 #~/dotfiles/scripts/monitor-control/controlMon.pl --changeDPstatus
 
-# Option Synaptic
-synclient LeftEdge=1574  \
-          RightEdge=5369 \
-          TopEdge=1354  \
-          BottomEdge=4571 \
-          FingerLow=25  \
-          FingerHigh=30 \
-          MaxTapTime=180 \
-          MaxTapMove=254 \
-          MaxDoubleTapTime=180 \
-          SingleTapTimeout=180 \
-          ClickTime=100 \
-          EmulateMidButtonTime=0 \
-          EmulateTwoFingerMinZ=282 \
-          EmulateTwoFingerMinW=7 \
-          VertScrollDelta=115 \
-          HorizScrollDelta=115 \
-          VertEdgeScroll=0 \
-          HorizEdgeScroll=1 \
-          CornerCoasting=0 \
-          VertTwoFingerScroll=1 \
-          HorizTwoFingerScroll=0 \
-          MinSpeed=1 \
-          MaxSpeed=1.75 \
-          AccelFactor=0.0345901 \
-          TouchpadOff=0 \
-          LockedDrags=0 \
-          LockedDragTimeout=5000 \
-          RTCornerButton=0 \
-          RBCornerButton=0 \
-          LTCornerButton=0 \
-          LBCornerButton=0 \
-          TapButton1=1 \
-          TapButton2=3 \ 
-          TapButton3=2 \
-          ClickFinger1=1 \
-          ClickFinger2=3 \
-          ClickFinger3=2 \
-          CircularScrolling=0 \
-          CircScrollDelta=0.1 \
-          CircScrollTrigger=0 \
-          CircularPad=0 \
-          PalmDetect=0 \
-          PalmMinWidth=10 \
-          PalmMinZ=200 \
-          CoastingSpeed=20 \
-          CoastingFriction=50 \
-          PressureMotionMinZ=30 \
-          PressureMotionMaxZ=160 \
-          PressureMotionMinFactor=1 \
-          PressureMotionMaxFactor=1 \
-          GrabEventDevice=0 \
-          TapAndDragGesture=1 \
-          AreaLeftEdge=0 \
-          AreaRightEdge=0 \
-          AreaTopEdge=0 \
-          AreaBottomEdge=0 \
-          HorizHysteresis=28 \
-          VertHysteresis=28 \
-          ClickPad=1 \
-          RightButtonAreaLeft=3471 \
-          RightButtonAreaRight=0 \
-          RightButtonAreaTop=4158 \
-          RightButtonAreaBottom=0 \
-          MiddleButtonAreaLeft=0 \
-          MiddleButtonAreaRight=0 \
-          MiddleButtonAreaTop=0 \
-          MiddleButtonAreaBottom=0 
+#keyboard option
+#setxkbmap -layout us,ru -option grp:alt_shift_toggle -option grp_led:caps
+
+# Conky
+conky -d -c .conky/network 
 
 #exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome
 #fucking with polkit
