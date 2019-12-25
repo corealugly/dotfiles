@@ -1,0 +1,11 @@
+#Defaults  env_keep += "SSH_AUTH_SOCK DBUS_SESSION_BUS_ADDRESS" 
+Defaults  env_keep += "SSH_AUTH_SOCK"
+Defaults  timestamp_timeout=0  #ask pass always
+Defaults  !lecture
+Defaults  !root_sudo
+Defaults  passwd_tries=2
+Defaults  passwd_timeout=1
+Defaults  logfile=/var/log/sudo
+
+
+%wheel ALL=(ALL) NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
