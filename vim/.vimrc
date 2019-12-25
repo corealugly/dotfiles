@@ -112,6 +112,8 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<   " настройка отображения спец символов
 " }}}
 
 " {{{ BIND KEYS
@@ -124,6 +126,8 @@ map <C-L> :set list!<CR>
 
 map <F9> :set paste<CR>
 map <F10> :set nopaste<CR>
+
+nnoremap <F3> :set list!<CR>
 
 " limit the width of e-mail text to 72 characters
 au BufRead /tmp/mutt-* set tw=72
