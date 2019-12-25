@@ -26,3 +26,16 @@ alias pbpaste='xsel --clipboard --output'
 
 #alias startx-wrapper='screen -S startx-wrapper -d -m /usr/bin/startx && logout'
 alias startx='screen -S startx-wrapper -d -m /usr/bin/startx && logout'
+
+alias bb_test="optirun -v -b virtualgl -c jpeg glxgears"
+alias bb_check="optirun -vv glxinfo | grep -iE 'OpenGL|rendering:'"
+alias bb_fps_check="optirun -vv glxspheres64"
+alias video_check="glxinfo | grep -iE 'OpenGL|rendering:'"
+alias video_fps_check="glxspheres64"
+
+alias os='openstack'
+
+#GIT
+alias gitlp='git log --pretty=oneline'
+
+alias yaml2json='python -c "import sys,yaml,json;sys.tracebacklimit=0;print(json.dumps(yaml.load(open(sys.argv[1]).read()), indent=2))"'
