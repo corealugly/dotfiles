@@ -1,6 +1,8 @@
 # Установка пакетов с использованием stow 
 ## Установка urxvt
 ```stow --dotfiles -v urxvt```
+## удаление пакета urxvt
+```stow --dotfiles -D urxvt```
 ## Установка пакета ETC в /
 ```sudo stow --dotfiles -vvv -t / etc```
 ## удаление пакета ETC из /
