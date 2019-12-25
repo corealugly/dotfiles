@@ -1,8 +1,13 @@
+# Установка пакетов с использованием stow 
+## Установка urxvt
+stow -v urxvt
+## Установка пакета ETC
+sudo stow -vvv -t / etc
+## удаление пакета ETC
+sudo stow -D -t / etc/
+
+> пакеты ставящиеся в / требуют прав root
+
 # Fonts
-# default point ~/.fonts
 alias updateFonts='fc-cache -vf ~/.fonts'
 alias checkFonts='echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"'
-
-# It is required only at start through startx
-# default point ~/.xinitrc
-.xinitrc
