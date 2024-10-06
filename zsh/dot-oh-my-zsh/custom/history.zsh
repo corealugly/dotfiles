@@ -40,6 +40,8 @@ setopt  HIST_IGNORE_SPACE
 setopt  HIST_REDUCE_BLANKS
 #команды «history» и «fc» в историю заноситься не будут
 setopt HIST_NO_STORE
+#fix
+#setopt no_nomatch
 #----------------------
 #HISTFILE - для изменения имени файла, в котором сохраняется история команд. Стандартное значение ~/.bash_history
 HISTFILE=~/.zsh_history

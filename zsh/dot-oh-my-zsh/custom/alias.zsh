@@ -1,9 +1,24 @@
+#alias k8s='function _t() { if [ ${1} == start ]; then minikube ${1} --vm-driver kvm2 --mount --mount-string ~/work/k8s/:/tmp/k8s/; fi; if [ ${1} == stop ]; then minikube ${1}; fi }; _t '
+alias k9s="/home/corealugly/work/git/k8s-sudism-confs/k9s"
+
+alias vipnet='function _t() { if [ ${1} == start ]; then sudo iptables -A OUTPUT -d 37.230.149.108 -j DROP; fi; if [ ${1} == stop ]; then sudo iptables -D OUTPUT -d 37.230.149.108 -j DROP; fi;  docker ${1} vipnet; sleep 5; systemctl --user ${1} ssh-sock-dc3.service; }; _t '
+#alias vipnet='function _t() { docker ${1} vipnet; sleep 5; systemctl --user ${1} ssh-sock.service; systemctl --user ${1} ssh-sock-xenon.service  }; _t '
+
 #alias telegramh="nohup telegram-desktop -many -workdir ~/.telegram/home/ &"
 #alias telegramw="nohup telegram-desktop -many -workdir ~/.telegram/work/ &"
 
-alias DRM="docker run --entrypoint /bin/bash --rm -it"
-alias DR="docker run --entrypoint /bin/bash -it"
-alias CAD="cd /etc/pki/ca/" 
+#alias sudos='ssh host.local'
+
+alias kdebug='function _f() { kubectl run -n ${1:-sudis} --rm -it debug --image=${2:-docker.cloud.mvd.ru/busybox} --image-pull-policy="IfNotPresent" --overrides='\''{"spec": {"imagePullSecrets":[{"name": "regcred"}]}}'\'' --restart=Never -- sh; }; _f'
+
+#docker / swarm
+alias drm="docker run --entrypoint /bin/bash --rm -it"
+alias dr="docker run --entrypoint /bin/bash -it"
+alias cad="cd /etc/pki/ca/" 
+alias stdeploy="docker stack deploy -c ./docker-compose.yml \$(basename \$(pwd)) --with-registry-auth"
+alias strm="docker stack rm \$(basename \$(pwd))"
+alias dslc="docker service ls | grep -i  \" \$(basename \$(pwd))_\""
+alias dsl="docker service ls"
 
 alias gpg-reload="gpg-connect-agent reloadagent /bye"
 
@@ -39,3 +54,6 @@ alias os='openstack'
 alias gitlp='git log --pretty=oneline'
 
 alias yaml2json='python -c "import sys,yaml,json;sys.tracebacklimit=0;print(json.dumps(yaml.load(open(sys.argv[1]).read()), indent=2))"'
+
+#KUBERNETES
+alias k='/usr/bin/kubectl'
